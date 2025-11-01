@@ -1,0 +1,49 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #111;
+}
+
+.parent {
+  height: 100%;
+  width: 100%;
+  background-color: #111;
+  padding: 30px;
+}
+
+.card  {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.card .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top img {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: 1px solid #dadada;
+  padding: 2px;
+}
+
+.top button {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dadada;
+  padding: 3px 6px;
+  font-size: 10px;
+  border-radius: 5px;
+  gap: 3px;
+  background-color: transparent;
+  color: #b1b1b1;
+}
+
+.top
