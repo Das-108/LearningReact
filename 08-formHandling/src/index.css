@@ -1,0 +1,11 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+input, button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 10px;
+}
