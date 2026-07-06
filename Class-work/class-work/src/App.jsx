@@ -1,24 +1,44 @@
-import React from 'react'
-import UserCard from './UserCard'
-
+import React from 'react';
+import { Routes, Route, Link } from "react-router-dom";
+import UserCard from './UserCard';
+import UseEffect from './pages/UseEffect';
 
 const App = () => {
   return (
-    <div id='center'>
-      <UserCard 
-        name="Alex Morgan" 
-        email="alex@example.com"        
-      >
-        {/* These elements are injected into the 'children' prop */}
-        <button className="btn-secondary" onClick={() => console.log('Messaged')}>
-          Message
-        </button>
-        <button className="btn-primary" onClick={() => console.log('Followed')}>
-          Follow
-        </button>
-      </UserCard>
-    </div>
-  )
-}
+    <div>
+      {/* सामान्य नेभिगेसन बार (पेजहरू बीच आवतजावत गर्न) */}
+      <nav style={navStyle}>
+        <Link to="/" style={linkStyle}>Home (User Card)</Link> |{" "}
+        <Link to="/useeffect" style={linkStyle}>UseEffect Page</Link>
+      </nav>
 
-export default App
+      {/* तपाईंको राउट्स (Routes) को कन्फिगरेसन */}
+      <Routes>
+        <Route 
+          path="/" 
+          element={
+            <div id='center' style={centerStyle}>
+              <UserCard name="Alex Morgan" email="alex@example.com">
+                <button className="btn-secondary" onClick={() => console.log('Messaged')}>
+                  Message
+                </button>
+                <button className="btn-primary" onClick={() => console.log('Followed')}>
+                  Follow
+                </button>
+              </UserCard>
+            </div>
+          } 
+        />
+
+        <Route path="/useeffect" element={<UseEffect />} />
+        
+      </Routes>
+    </div>
+  );
+};
+
+const navStyle = { padding: '15px', background: '#f4f4f4', marginBottom: '20px' };
+const linkStyle = { margin: '0 10px', textDecoration: 'none', color: '#007bff', fontWeight: 'bold' };
+const centerStyle = { display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh' };
+
+export default App;
