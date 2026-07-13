@@ -2,6 +2,8 @@ import React from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import UserCard from './UserCard';
 import UseEffect from './pages/UseEffect';
+import FetchPractice from './pages/FetchPratice';
+import PokemonFetcher from './pages/PokemonFetcher';
 
 const App = () => {
   return (
@@ -10,6 +12,8 @@ const App = () => {
       <nav style={navStyle}>
         <Link to="/" style={linkStyle}>Home (User Card)</Link> |{" "}
         <Link to="/useeffect" style={linkStyle}>UseEffect Page</Link>
+        <Link to="/fetchPractice" style={linkStyle}>fetch practice Page</Link>
+        <Link to="/data-fetching" style={linkStyle}>pokemon data Page</Link>
       </nav>
 
       {/* तपाईंको राउट्स (Routes) को कन्फिगरेसन */}
@@ -31,6 +35,8 @@ const App = () => {
         />
 
         <Route path="/useeffect" element={<UseEffect />} />
+        <Route path="/fetchPractice" element={<FetchPractice />} />
+        <Route path="/data-fetching" element={<PokemonFetcher />} />
         
       </Routes>
     </div>
